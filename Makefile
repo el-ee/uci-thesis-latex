@@ -9,20 +9,20 @@ DVI	:= $(OUT)/$(PROJ).dvi
 PDF	:= $(OUT)/$(PROJ).pdf
 
 # Can also use pdflatex, if preferred
-CMDLATEX := latex -output-directory=$(OUT)
+CMDLATEX := xelatex -output-directory=$(OUT)
 CMDPDF   := dvipdf
 
-PDFVIEWER := evince
+# PDFVIEWER := evince
 
 all: $(DVI) $(PDF)
 
-$(PDF) : $(DVI)
-	$(CMDPDF) $(DVI) $(PDF)
+# $(PDF) : $(DVI)
+# 	$(CMDPDF) $(DVI) $(PDF)
 
 # OUT directory must be ordered before we generate output
 $(OUT)/%.dvi: %.tex | $(OUT)
 	$(CMDLATEX) $<
-	bibtex $(OUT)/$(<:%.tex=%)
+	biber $(OUT)/$(<:%.tex=%)
 	$(CMDLATEX) $<
 	$(CMDLATEX) $<	# Run LaTeX again to make sure all references are correct
 
@@ -32,8 +32,8 @@ $(DVI) : $(DEP)
 $(OUT):
 	mkdir -p $@
 
-show	: $(PDF)
-	$(PDFVIEWER) "$(PDF)"
+# show	: $(PDF)
+	# $(PDFVIEWER) "$(PDF)"
 
 clean	:
 	rm -rf $(OUT)/*.aux
@@ -46,3 +46,5 @@ clean	:
 	rm -rf $(OUT)/*.out
 	rm -rf $(OUT)/*.toc
 	rm -rf $(OUT)/*.pdf
+	rm -rf $(OUT)/*.bcf
+	rm -rf $(OUT)/*.run.xml

@@ -1,27 +1,28 @@
-\thesistitle{Title of the Thesis}
+\thesistitle{Computing as Context: Experiences of Dis/Connection Beyond the Moment of Non/Use}
 
 \degreename{Doctor of Philosophy}
 
 % Use the wording given in the official list of degrees awarded by UCI:
 % http://www.rgs.uci.edu/grad/academic/degrees_offered.htm
-\degreefield{Computer Science}
+\degreefield{Information and Computer Science}
 
 % Your name as it appears on official UCI records.
-\authorname{Your name}
+\authorname{Mary E. Harmon}
 
 % Use the full name of each committee member.
-\committeechair{Professor A}
+\committeechair{Associate Professor Melissa A. Mazmanian}
 \othercommitteemembers
 {
-  Professor B\\
-  Professor C
+  Associate Professor Kavita Sara Philip\\
+  Professor J. Paul Dourish\\
+  Professor Geoffrey C. Bowker
 }
 
-\degreeyear{2012}
+\degreeyear{2015}
 
 \copyrightdeclaration
 {
-  {\copyright} {\Degreeyear} \Authorname
+  © {\Degreeyear} \Authorname
 }
 
 % If you have previously published parts of your manuscript, you must list the
@@ -34,35 +35,32 @@
 % 	All other materials {\copyright} {\Degreeyear} \Authorname
 % }
 
-% The dedication page is optional.
-\dedications
-{
-  (Optional dedication page)
-  
-  To ...
-}
+% % The dedication page is optional.
+% \dedications
+% {
+%   (Optional dedication page)
+%
+%   To ...
+% }
 
 \acknowledgments
 {
-  I would like to thank...
+The research for this dissertation has been funded in part by the Intel Science and Technology Center for Social Computing, and a Rob Kling Memorial Fellowship. 
+	
+This dissertation gives but a few small glimpses into the lives of my many fieldwork participants. I am indebted to all of them for numerous insightful interviews, casual conversations, and welcoming me into their homes, workplaces, backyards, campsites, and lives.
   
-  (You must acknowledge grants and other funding assistance. 
-  
-  You may also acknowledge the contributions of professors and
-  friends.
-  
-  You also need to acknowledge any publishers of your previous
-  work who have given you permission to incorporate that work
-  into your dissertation. See Section 3.2 of the UCI Thesis and
-  Dissertation Manual.)
-}
+In addition to my advisor, Melissa Mazmanian, and committee members Kavita Philip, Paul Dourish, and Geof Bowker, I would also like to thank Gary Olson, Judy Olson, and Bill Maurer who worked with me at UCI prior to the dissertation, and Christine Beckman who has been an invaluable collaborator in the research conducted with families and workers in southern California.
+
+This dissertation would not have been possible without the support, encouragement, and intellectual engagements of my family, friends, and colleagues, in particular: Luke Olbrish, Sue Harmon, Lynn Dombrowski, Kate Darling, Mel Gregg, Lilly Irani, Nick Seaver, Six Silberman, Dillon Mahmoudi, Erin Goodling, Anthony Levenda, Oliver Haimson, Beth Reddy, Luke Stark, Austin Toombs, Sen Hirano, Katie Pine, Marisa Cohn, Jed Brubaker, Amy Voida, and Nancy Nersessian.
+ }
 
 
 % Some custom commands for your list of publications and software.
-\newcommand{\mypubentry}[3]{
+\newcommand{\mypubentry}[4]{
   \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}p{4.5in}r}
     \textbf{#1} & \textbf{#2} \\ 
-    \multicolumn{2}{@{\extracolsep{\fill}}p{.95\textwidth}}{#3}\vspace{6pt} \\
+    \multicolumn{2}{@{\extracolsep{\fill}}p{4.5in}}{#3} \\
+		\multicolumn{2}{@{\extracolsep{\fill}}p{4.5in}}{#4}\vspace{8pt} \\
   \end{tabular*}
 }
 \newcommand{\mysoftentry}[3]{
@@ -84,30 +82,23 @@
 \textbf{EDUCATION}
   
   \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}lr}
-    \textbf{Doctor of Philosophy in Computer Science} & \textbf{2012} \\
+    \textbf{Doctor of Philosophy in Information and Computer Science} & \textbf{2015} \\
     \vspace{6pt}
-    University name & \emph{City, State} \\
-    \textbf{Bachelor of Science in Computational Sciences} & \textbf{2007} \\
+    University of California, Irvine \\
+        \textbf{Master of Science in Human Computer Interaction} & \textbf{2007} \\
+    \textbf{Bachelor of Science in Computer Science} & \textbf{2004} \\
     \vspace{6pt}
-    Another university name & \emph{City, State} \\
-  \end{tabular*}
-
-\vspace{12pt}
-\textbf{RESEARCH EXPERIENCE}
-
-  \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}lr}
-    \textbf{Graduate Research Assistant} & \textbf{2007--2012} \\
-    \vspace{6pt}
-    University of California, Irvine & \emph{Irvine, California} \\
+    Georgia Institute of Technology\\
   \end{tabular*}
 
 \vspace{12pt}
 \textbf{TEACHING EXPERIENCE}
 
   \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}lr}
-    \textbf{Teaching Assistant} & \textbf{2009--2010} \\
-    \vspace{6pt}
-    University name & \emph{City, State} \\
+    \textbf{Instructor} & \textbf{2014} \\
+    Introduction to Human Computer Interaction \\
+    Department of Informatics\\
+    University of California, Irvine \\
   \end{tabular*}
 
 \pagebreak
@@ -117,17 +108,13 @@
   \mypubentry{Ground-breaking article}{2012}{Journal name}
 
 \vspace{12pt}
-\textbf{REFEREED CONFERENCE PUBLICATIONS}
-
-  \mypubentry{Awesome paper}{Jun 2011}{Conference name}
-  \mypubentry{Another awesome paper}{Aug 2012}{Conference name}
-
-\vspace{12pt}
-\textbf{SOFTWARE}
-
-  \mysoftentry{Magical tool}{http://your.url.here/}
-  {C++ algorithm that solves TSP in polynomial time.}
-
+\textbf{SELECTED PUBLICATIONS}
+\begin{flushleft}
+  \mypubentry{Stories of the smartphone in everyday discourse: conflict, tension \& instability}{2013}{Ellie Harmon and Melissa Mazmanian}{\emph{ACM Conference on Human Factors in Computing Systems (CHI '13)}}
+  \mypubentry{Cognitive partnerships on the bench top: designing to support scientific researchers}{2008}{Ellie Harmon and Nancy J. Nersessian}{\emph{ACM Conference on Designing Interactive Systems (DIS '08)}}
+  \mypubentry{Edit-work: promoting interdisciplinary conversation within flagship journals}{2012}{Ellie Harmon}{In Chima M. Anyadike-Danes et al., ``Reflections on american anthropology: a conference at UC Irvine.''\emph{ American Anthropologist.}}
+	\end{flushleft}
+	
 }
 
 % The abstract should not be over 350 words, although that's

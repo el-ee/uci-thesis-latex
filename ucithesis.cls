@@ -33,6 +33,19 @@
 \RequirePackage[hmargin={1in,1in},vmargin={1in,1in}]{geometry}
 \RequirePackage{setspace}
 
+% footnotes - must be after setspace
+\usepackage[hang]{footmisc}
+% \setlength{\footnotesep}{.25in}
+\setlength{\skip\footins}{.25in}
+
+% because extra spacing between paragraphs looks crazy
+\raggedbottom
+
+% spacing between figure number and caption
+\makeatletter
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
+
 \newcommand{\thesistitle}[1]{\newcommand\Thesistitle{#1}}
 \newcommand{\degreename}[1]{\newcommand\Degreename{#1}}
 \newcommand{\degreefield}[1]{\newcommand\Degreefield{#1}}
@@ -221,10 +234,10 @@
 	\phantomsection
 	\addcontentsline{toc}{chapter}{LIST OF FIGURES}
 	\listoffigures
-	\clearpage
-	\phantomsection
-	\addcontentsline{toc}{chapter}{LIST OF TABLES}
-	\listoftables
+	% \clearpage
+%   \phantomsection
+%   \addcontentsline{toc}{chapter}{LIST OF TABLES}
+%   \listoftables
 	\ifx\listalgorithmname\undefined  % for algorithm package
 	\else
 	  \clearpage
@@ -266,13 +279,13 @@
 }
 
 % Redefine the bibliography to make it single-spaced.
-\renewcommand{\bibliography}[1]{%
-  \if@filesw
-    \immediate\write\@auxout{\string\bibdata{#1}}%
-  \fi
-  % Make sure the table of contents has an entry for the bibliography
-  \addcontentsline{toc}{chapter}{Bibliography}
-  \begin{singlespacing}
-  \@input@{\jobname.bbl}
-  \end{singlespacing}
-}
+% \renewcommand{\bibliography}[1]{%
+%   \if@filesw
+%     \immediate\write\@auxout{\string\bibdata{#1}}%
+%   \fi
+%   % Make sure the table of contents has an entry for the bibliography
+%   \addcontentsline{toc}{chapter}{Bibliography}
+%   \begin{singlespacing}
+%   \@input@{\jobname.bbl}
+%   \end{singlespacing}
+% }
