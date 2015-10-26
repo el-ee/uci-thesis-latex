@@ -3,13 +3,14 @@ PROJ := thesis
 SRC	:= $(PROJ).tex
 DEP	:= $(wildcard *.tex *.bib) ucithesis.cls
 
-OUT	:= .
+OUT	:= ../tex/
+IN := ../tex/
 
 DVI	:= $(OUT)/$(PROJ).dvi
 PDF	:= $(OUT)/$(PROJ).pdf
 
 # Can also use pdflatex, if preferred
-CMDLATEX := xelatex -output-directory=$(OUT)
+CMDLATEX := xelatex -output-directory=$(OUT) -input-directory=$(IN)
 CMDPDF   := dvipdf
 
 # PDFVIEWER := evince

@@ -29,3 +29,5 @@
 *.pdf
 *.bcf
 *.run.xml
+images/*
+.DS_Store
