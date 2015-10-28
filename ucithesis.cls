@@ -38,12 +38,20 @@
 % \setlength{\footnotesep}{.25in}
 \setlength{\skip\footins}{.25in}
 
-% because extra spacing between paragraphs looks crazy
+% because extra spacing between paragraphs looks awful
 \raggedbottom
 
 % spacing between figure number and caption
 \makeatletter
      \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
+
+% block quotes have extra v space because they're lists in latex, disable this
+% \usepackage[vskip=0pt]{quoting}
+% alternative way, above didn't work
+\usepackage{etoolbox}
+\makeatletter
+\AtBeginEnvironment{quote}{\appto\@listi{\parsep\z@ \topsep\z@ \itemsep\z@}}
 \makeatother
 
 \newcommand{\thesistitle}[1]{\newcommand\Thesistitle{#1}}
