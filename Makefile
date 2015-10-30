@@ -16,6 +16,7 @@ CMDPDF   := dvipdf
 # PDFVIEWER := evince
 
 all: $(DVI) $(PDF)
+	open $(OUT)/$(PROJ).pdf
 
 # $(PDF) : $(DVI)
 # 	$(CMDPDF) $(DVI) $(PDF)
