@@ -34,9 +34,14 @@
 \RequirePackage{setspace}
 
 % footnotes - must be after setspace
-\usepackage[hang]{footmisc}
+% sets to hanging indent, with number out to side
+% moves footnotes to the actual bottom of the page, so extra space
+% from raggedbottom is between page content and notes, not after
+% the notes
+\usepackage[hang, bottom]{footmisc}
 % \setlength{\footnotesep}{.25in}
 \setlength{\skip\footins}{.25in}
+\setlength{\footnotemargin}{1em}
 
 % because extra spacing between paragraphs looks awful
 \raggedbottom

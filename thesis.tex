@@ -40,9 +40,52 @@
 % \usepackage{natbib}
 % \bibpunct{(}{)}{;}{a}{}{,}
 
-\usepackage[backend=biber, style=authoryear]{biblatex}
+\usepackage[authordate, footmarkoff, backend=biber, isbn=false]{biblatex-chicago}
+% \usepackage[backend=biber, style=authoryear]{biblatex}
+
+
+%% remove urls if doi present, because duplication is obnoxious
+%% from http://tex.stackexchange.com/questions/5660/redundancy-in-bib-file-conditionally-suppress-url-if-same-as-doi/5795#5795
+
+\DeclareFieldFormat{url}{%
+  \iffieldundef{doi}{%
+    \mkbibacro{URL}\addcolon\space\url{#1}%
+  }{%
+  }%
+}
+
+\DeclareFieldFormat{urldate}{%
+  \iffieldundef{doi}{%
+    \mkbibparens{\bibstring{urlseen}\space#1}%
+  }{%
+  }%
+}
+
 \addbibresource{thesis.bib}
 
+
+% do not print URL if there is a DOI
+% \renewbibmacro*{doi+eprint+url}{%
+%   \iftoggle{bbx:doi}
+%     {\printfield{doi}}
+%     {}%
+% \newunit\newblock
+%   \iftoggle{bbx:eprint}
+%     {\usebibmacro{eprint}}
+%     {}%
+% \newunit\newblock
+%   \iftoggle{bbx:url}
+%         {%
+%       \iffieldundef{doi}
+% {\usebibmacro{url+urldate}}
+%         {%
+%           \clearfield{url}%
+%         }%
+%     }
+%     {}}
+%
+		
+% ??
 \usepackage{relsize}
 
 % Some other useful packages
@@ -145,8 +188,10 @@
 % add to contents + make single spaced
 \addcontentsline{toc}{chapter}{Bibliography}
 \begin{singlespacing}
+\begin{flushleft}
 \setlength\bibitemsep{12pt} %single spacing now needs space between entries
 \printbibliography
+\end{flushleft}
 \end{singlespacing}
 
 % The Thesis Manual says not to include appendix figures and tables in
